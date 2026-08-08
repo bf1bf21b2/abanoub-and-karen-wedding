@@ -107,3 +107,79 @@ form.addEventListener("submit", async (event) => {
 
 const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyyJVZguJP386Ir9As-KLnel-q_i_qAypoR0Qk1uLKofpJVMELa6uzTJY0-XaR03gDo_A/exec";
 
+const invitationScreen =
+    document.getElementById("invitationScreen");
+
+const openInvitation =
+    document.getElementById("openInvitation");
+
+const music =
+    document.getElementById("weddingMusic");
+
+const musicBtn =
+    document.getElementById("musicBtn");
+
+
+openInvitation.addEventListener("click", async () => {
+
+    // Start opening animation
+    invitationScreen.classList.add("opening");
+
+    // Start music
+    try {
+        music.volume = 0;
+        await music.play();
+
+        // Fade in music
+        let volume = 0;
+
+        const fadeIn = setInterval(() => {
+
+            volume += 0.02;
+
+            if (volume >= 0.7) {
+                volume = 0.7;
+                clearInterval(fadeIn);
+            }
+
+            music.volume = volume;
+
+        }, 80);
+
+    } catch (error) {
+        console.log("Music could not start:", error);
+    }
+
+    // Show music button
+    musicBtn.classList.add("visible");
+
+
+    // Wait for envelope animation
+    setTimeout(() => {
+
+        invitationScreen.classList.add("hidden");
+
+    }, 1800);
+
+});
+
+
+/* Music button */
+
+musicBtn.addEventListener("click", async () => {
+
+    if (music.paused) {
+
+        await music.play();
+
+        musicBtn.innerHTML = "🔊";
+
+    } else {
+
+        music.pause();
+
+        musicBtn.innerHTML = "🎵";
+
+    }
+
+});

@@ -40,7 +40,7 @@ body {
 @keyframes spin { to { transform: rotate(360deg); } }
 
 .hero {
-  min-height: 100vh;
+  min-height: 140vh;
   position: relative;
   display: grid;
   place-items: center;
@@ -50,6 +50,9 @@ body {
     linear-gradient(rgba(35,25,25,.32), rgba(35,25,25,.44)),
     url("assets/hero.jpg") center/cover,
     url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=90") center/cover;
+  background-size: cover; /* عشان الصورة تغطي الشاشة كلها بدون ما تتمط */
+  background-position: center; /* عشان يركز على منتصف الصورة دايماً */
+  background-repeat: no-repeat;
 }
 
 .hero-overlay {
@@ -170,4 +173,453 @@ footer p { opacity: .55; font-size: 9px; letter-spacing: .15em; margin-top: 10px
   .detail-card:last-child { border-bottom: 0; }
   .email-form { flex-direction: column; }
   .email-form .btn { width: 100%; }
+}
+/* =========================
+   INVITATION OPENING
+========================= */
+
+.invitation-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(circle at center,
+        rgba(255,255,255,.25),
+        transparent 45%),
+        #eadfd5;
+
+    transition:
+        opacity 1.2s ease,
+        visibility 1.2s ease;
+}
+
+.invitation-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+
+/* Wrapper */
+
+.invitation-wrapper {
+    width: min(90vw, 650px);
+    text-align: center;
+}
+
+
+/* =========================
+   ENVELOPE
+========================= */
+
+.envelope {
+    position: relative;
+
+    width: min(85vw, 560px);
+    height: min(55vw, 350px);
+
+    margin: auto;
+
+    perspective: 1200px;
+}
+
+
+/* Envelope back */
+
+.envelope-back {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f7eee6,
+            #e6d4c5
+        );
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 25px 60px rgba(70,40,30,.25);
+
+    border: 1px solid rgba(100,70,50,.15);
+}
+
+
+/* Invitation card */
+
+.invitation-card {
+    position: absolute;
+
+    left: 7%;
+    right: 7%;
+
+    bottom: 5%;
+
+    height: 90%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fffdf9,
+            #f8eee4
+        );
+
+    border-radius: 3px;
+
+    z-index: 2;
+
+    transform: translateY(0);
+
+    transition:
+        transform 1.3s cubic-bezier(.2,.8,.2,1),
+        box-shadow 1s;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,.12);
+
+    overflow: hidden;
+}
+
+
+.invitation-card::before {
+    content: "";
+
+    position: absolute;
+    inset: 12px;
+
+    border: 1px solid rgba(150,110,80,.35);
+
+    pointer-events: none;
+}
+
+
+/* Card content */
+
+.card-content {
+    position: relative;
+
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #513b35;
+}
+
+
+.small-title {
+    font-size: 11px;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+}
+
+
+.card-content h1 {
+    margin: 0;
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(35px, 7vw, 60px);
+
+    font-weight: normal;
+
+    line-height: .9;
+}
+
+
+.and {
+    font-family: Georgia, serif;
+
+    font-size: 25px;
+
+    margin: 8px 0;
+}
+
+
+.card-content p {
+    margin-top: 22px;
+
+    font-family: Georgia, serif;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+}
+
+
+.card-date {
+    margin-top: 12px;
+
+    font-size: 13px;
+
+    letter-spacing: 4px;
+}
+
+
+/* =========================
+   ENVELOPE FRONT
+========================= */
+
+.envelope-front {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 4;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f2e4d8,
+            #dfc9b7
+        );
+
+    clip-path: polygon(
+        0 25%,
+        50% 65%,
+        100% 25%,
+        100% 100%,
+        0 100%
+    );
+
+    border-radius: 0 0 5px 5px;
+}
+
+
+/* =========================
+   ENVELOPE FLAP
+========================= */
+
+.envelope-flap {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 5;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f8eee6,
+            #e4d1c2
+        );
+
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        50% 58%
+    );
+
+    transform-origin: top center;
+
+    transition:
+        transform 1.2s cubic-bezier(.65,.05,.36,1);
+
+    backface-visibility: hidden;
+}
+
+
+/* =========================
+   WAX SEAL
+========================= */
+
+.wax-seal {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -20%);
+
+    width: 75px;
+    height: 75px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    z-index: 10;
+
+    cursor: pointer;
+
+    color: #fff;
+
+    font-family: Georgia, serif;
+
+    font-size: 17px;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #b95b55,
+            #7d2929 65%,
+            #591b1b
+        );
+
+    box-shadow:
+        0 5px 12px rgba(0,0,0,.25),
+        inset 0 2px 4px rgba(255,255,255,.25);
+
+    transition:
+        transform .3s ease,
+        opacity .5s ease;
+}
+
+
+.wax-seal:hover {
+    transform:
+        translate(-50%, -20%)
+        scale(1.08);
+}
+
+
+/* =========================
+   OPEN ANIMATION
+========================= */
+
+.invitation-screen.opening .envelope-flap {
+    transform: rotateX(180deg);
+}
+
+
+.invitation-screen.opening .wax-seal {
+    opacity: 0;
+    transform:
+        translate(-50%, -20%)
+        scale(.5);
+}
+
+
+.invitation-screen.opening .invitation-card {
+    transform: translateY(-35%);
+
+    box-shadow:
+        0 25px 45px rgba(0,0,0,.18);
+}
+
+
+.invitation-screen.opening .open-text {
+    opacity: 0;
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+.open-text {
+    margin-top: 30px;
+
+    color: #674c42;
+
+    font-family: Georgia, serif;
+
+    font-size: 14px;
+
+    letter-spacing: 2px;
+
+    animation: breathe 2s infinite;
+
+    transition: opacity .5s ease;
+}
+
+
+@keyframes breathe {
+
+    0%,100% {
+        opacity: .45;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+.music-btn {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    width: 52px;
+    height: 52px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,.5);
+
+    background: rgba(255,255,255,.85);
+
+    color: #67443d;
+
+    font-size: 21px;
+
+    cursor: pointer;
+
+    z-index: 9999;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,.18);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        opacity .5s ease,
+        transform .3s ease;
+}
+
+
+.music-btn.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+.music-btn:hover {
+    transform: scale(1.08);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .envelope {
+        width: 90vw;
+        height: 58vw;
+    }
+
+    .wax-seal {
+        width: 65px;
+        height: 65px;
+        font-size: 15px;
+    }
+
+    .open-text {
+        font-size: 12px;
+    }
+
 }
