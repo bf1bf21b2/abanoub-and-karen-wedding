@@ -613,81 +613,161 @@ footer p { opacity: .55; font-size: 9px; letter-spacing: .15em; margin-top: 10px
 
 }
 
-/* =========================
-   SAFE MOBILE RESPONSIVE
-========================= */
+
+/* =========================================================
+   MOBILE — KEEP THE SAME DESKTOP COMPOSITION
+   Only reduce sizes; do NOT stack the main layout.
+========================================================= */
 
 @media (max-width: 760px) {
 
-  .section {
-    padding: 80px 6vw;
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
   }
 
-  /* HERO - keep desktop composition, only scale text */
+  /* HERO */
   .hero {
     min-height: 100svh;
+    height: 100svh;
     background-position: center center;
   }
 
   .hero-content {
     width: 100%;
-    padding: 24px 18px;
+    padding: 20px;
   }
 
   .hero h1 {
-    font-size: clamp(52px, 15vw, 82px);
+    font-size: clamp(48px, 13vw, 90px);
+    white-space: nowrap;
+  }
+
+  .eyebrow {
+    font-size: 8px;
+    letter-spacing: .22em;
   }
 
   .hero-subtitle {
     font-size: 9px;
-    letter-spacing: .13em;
+    letter-spacing: .12em;
+    margin: 20px 0;
   }
 
   .date-line {
-    gap: 12px;
-    font-size: 20px;
+    font-size: 19px;
+    gap: 10px;
+    margin-bottom: 25px;
   }
 
-  /* GALLERY */
+  .btn {
+    min-width: 170px;
+    padding: 13px 18px;
+  }
+
+  /* SECTION — same general proportions as laptop */
+  .section {
+    padding: 75px 6vw;
+  }
+
+  h2 {
+    font-size: clamp(42px, 10vw, 65px);
+  }
+
+  /* GALLERY — KEEP 2 COLUMNS LIKE LAPTOP */
   .gallery-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1.35fr .85fr;
+    gap: 10px;
+    width: 100%;
   }
 
   .photo-large {
-    grid-row: auto;
+    grid-row: span 2;
     min-height: 520px;
   }
 
   .photo {
-    min-height: 360px;
+    min-height: 255px;
   }
 
-  /* DETAILS */
+  .quote-card {
+    padding: 20px 10px;
+  }
+
+  .quote-card span {
+    font-size: 45px;
+  }
+
+  .quote-card p {
+    font-size: clamp(16px, 4.2vw, 27px);
+    margin: 12px 0;
+  }
+
+  .quote-card small {
+    font-size: 8px;
+  }
+
+  /* DETAILS — KEEP 3 COLUMNS LIKE LAPTOP */
+  .section-heading {
+    margin-bottom: 35px;
+  }
+
   .details-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
   }
 
   .detail-card {
-    border-right: 0;
-    border-bottom: 1px solid var(--line);
+    padding: 30px 8px;
+    border-right: 1px solid var(--line);
+    border-bottom: 0;
   }
 
   .detail-card:last-child {
-    border-bottom: 0;
+    border-right: 0;
+  }
+
+  .icon {
+    font-size: 23px;
+    margin-bottom: 10px;
+  }
+
+  .detail-card h3 {
+    font-size: clamp(20px, 5vw, 30px);
+    margin-bottom: 10px;
+  }
+
+  .detail-card p {
+    font-size: 8px;
+    line-height: 1.65;
+  }
+
+  .text-link {
+    font-size: 7px;
+    letter-spacing: .08em;
   }
 
   /* RSVP */
   .email-form {
-    flex-direction: column;
+    gap: 6px;
   }
 
-  .email-form .btn {
-    width: 100%;
+  .email-form input {
+    padding: 13px 12px;
   }
 
-  /* INVITATION OPENING */
+  /* FOOTER */
+  footer {
+    padding: 45px 15px;
+  }
+
+  footer h3 {
+    font-size: 30px;
+  }
+
+  /* INVITATION OPENING — do not break it */
   .invitation-screen {
-    padding: 15px;
+    padding: 12px;
   }
 
   .invitation-wrapper {
@@ -699,76 +779,91 @@ footer p { opacity: .55; font-size: 9px; letter-spacing: .15em; margin-top: 10px
     height: min(58vw, 350px);
   }
 
-  .invitation-card::before {
-    inset: 9px;
-  }
-
   .small-title {
-    font-size: clamp(8px, 2.2vw, 11px);
-    letter-spacing: clamp(2px, 1vw, 4px);
+    font-size: 9px;
+    letter-spacing: 2.5px;
   }
 
   .card-content h1 {
-    font-size: clamp(31px, 7vw, 60px);
+    font-size: clamp(31px, 8vw, 60px);
   }
 
   .and {
-    font-size: clamp(20px, 4vw, 25px);
+    font-size: 22px;
   }
 
   .card-content p {
-    font-size: clamp(9px, 2.3vw, 13px);
-    letter-spacing: clamp(1px, .6vw, 2px);
+    font-size: 10px;
+    letter-spacing: 1px;
   }
 
   .card-date {
-    font-size: clamp(9px, 2.3vw, 13px);
-    letter-spacing: clamp(2px, .8vw, 4px);
+    font-size: 10px;
+    letter-spacing: 2px;
   }
 
   .wax-seal {
-    width: clamp(60px, 17vw, 75px);
-    height: clamp(60px, 17vw, 75px);
-    font-size: clamp(13px, 3.8vw, 17px);
+    width: 62px;
+    height: 62px;
+    font-size: 14px;
   }
 
   .open-text {
+    margin-top: 20px;
     font-size: 11px;
-    margin-top: 24px;
   }
 
   .music-btn {
-    right: 16px;
-    bottom: 16px;
+    right: 14px;
+    bottom: 14px;
+    width: 48px;
+    height: 48px;
   }
 }
 
 @media (max-width: 390px) {
 
   .hero h1 {
-    font-size: clamp(46px, 14vw, 68px);
+    font-size: 48px;
+  }
+
+  .hero-subtitle {
+    font-size: 8px;
   }
 
   .date-line {
+    font-size: 17px;
+  }
+
+  .gallery-grid {
+    gap: 7px;
+  }
+
+  .photo-large {
+    min-height: 440px;
+  }
+
+  .photo {
+    min-height: 215px;
+  }
+
+  .quote-card p {
+    font-size: 15px;
+  }
+
+  .detail-card {
+    padding: 26px 5px;
+  }
+
+  .detail-card h3 {
     font-size: 18px;
   }
 
-  .envelope {
-    width: 92vw;
-    height: 59vw;
+  .detail-card p {
+    font-size: 7px;
   }
 
-  .card-content h1 {
-    font-size: clamp(29px, 8.5vw, 46px);
-  }
-
-  .wax-seal {
-    width: 58px;
-    height: 58px;
-    font-size: 13px;
-  }
-
-  .open-text {
-    font-size: 10px;
+  .text-link {
+    font-size: 6px;
   }
 }
