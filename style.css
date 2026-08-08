@@ -163,17 +163,6 @@ footer p { opacity: .55; font-size: 9px; letter-spacing: .15em; margin-top: 10px
 .reveal { opacity: 0; transform: translateY(25px); transition: opacity .8s ease, transform .8s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
-@media (max-width: 760px) {
-  .section { padding: 80px 6vw; }
-  .gallery-grid { grid-template-columns: 1fr; }
-  .photo-large { grid-row: auto; min-height: 520px; }
-  .photo { min-height: 360px; }
-  .details-grid { grid-template-columns: 1fr; }
-  .detail-card { border-right: 0; border-bottom: 1px solid var(--line); }
-  .detail-card:last-child { border-bottom: 0; }
-  .email-form { flex-direction: column; }
-  .email-form .btn { width: 100%; }
-}
 /* =========================
    INVITATION OPENING
 ========================= */
@@ -622,4 +611,164 @@ footer p { opacity: .55; font-size: 9px; letter-spacing: .15em; margin-top: 10px
         font-size: 12px;
     }
 
+}
+
+/* =========================
+   SAFE MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 760px) {
+
+  .section {
+    padding: 80px 6vw;
+  }
+
+  /* HERO - keep desktop composition, only scale text */
+  .hero {
+    min-height: 100svh;
+    background-position: center center;
+  }
+
+  .hero-content {
+    width: 100%;
+    padding: 24px 18px;
+  }
+
+  .hero h1 {
+    font-size: clamp(52px, 15vw, 82px);
+  }
+
+  .hero-subtitle {
+    font-size: 9px;
+    letter-spacing: .13em;
+  }
+
+  .date-line {
+    gap: 12px;
+    font-size: 20px;
+  }
+
+  /* GALLERY */
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .photo-large {
+    grid-row: auto;
+    min-height: 520px;
+  }
+
+  .photo {
+    min-height: 360px;
+  }
+
+  /* DETAILS */
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-card {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .detail-card:last-child {
+    border-bottom: 0;
+  }
+
+  /* RSVP */
+  .email-form {
+    flex-direction: column;
+  }
+
+  .email-form .btn {
+    width: 100%;
+  }
+
+  /* INVITATION OPENING */
+  .invitation-screen {
+    padding: 15px;
+  }
+
+  .invitation-wrapper {
+    width: 100%;
+  }
+
+  .envelope {
+    width: min(90vw, 560px);
+    height: min(58vw, 350px);
+  }
+
+  .invitation-card::before {
+    inset: 9px;
+  }
+
+  .small-title {
+    font-size: clamp(8px, 2.2vw, 11px);
+    letter-spacing: clamp(2px, 1vw, 4px);
+  }
+
+  .card-content h1 {
+    font-size: clamp(31px, 7vw, 60px);
+  }
+
+  .and {
+    font-size: clamp(20px, 4vw, 25px);
+  }
+
+  .card-content p {
+    font-size: clamp(9px, 2.3vw, 13px);
+    letter-spacing: clamp(1px, .6vw, 2px);
+  }
+
+  .card-date {
+    font-size: clamp(9px, 2.3vw, 13px);
+    letter-spacing: clamp(2px, .8vw, 4px);
+  }
+
+  .wax-seal {
+    width: clamp(60px, 17vw, 75px);
+    height: clamp(60px, 17vw, 75px);
+    font-size: clamp(13px, 3.8vw, 17px);
+  }
+
+  .open-text {
+    font-size: 11px;
+    margin-top: 24px;
+  }
+
+  .music-btn {
+    right: 16px;
+    bottom: 16px;
+  }
+}
+
+@media (max-width: 390px) {
+
+  .hero h1 {
+    font-size: clamp(46px, 14vw, 68px);
+  }
+
+  .date-line {
+    font-size: 18px;
+  }
+
+  .envelope {
+    width: 92vw;
+    height: 59vw;
+  }
+
+  .card-content h1 {
+    font-size: clamp(29px, 8.5vw, 46px);
+  }
+
+  .wax-seal {
+    width: 58px;
+    height: 58px;
+    font-size: 13px;
+  }
+
+  .open-text {
+    font-size: 10px;
+  }
 }
