@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Elegant wedding invitation">
+  <title>Abanoub & Karen | Wedding Invitation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="loader" class="loader">
+    <div class="loader-ring"></div>
+    <p>With love...</p>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content reveal">
+        <p class="eyebrow">Together with their families</p>
+        <h1>Abanoub <span>&amp;</span> Karen</h1>
+        <p class="hero-subtitle">invite you to celebrate their wedding</p>
+        <div class="date-line">
+          <span>03</span>
+          <i></i>
+          <span>10</span>
+          <i></i>
+          <span>2026</span>
+        </div>
+        <a href="#details" class="btn btn-light">View Invitation</a>
+      </div>
+      <div class="scroll-hint">Scroll ↓</div>
+    </section>
+
+    <section class="intro section reveal">
+      <p class="eyebrow">A beautiful beginning</p>
+      <h2>Two hearts, one story.</h2>
+      <p class="section-text">
+        With joyful hearts and the love of our families, we invite you
+        to share a very special day with us as we begin our journey together.
+      </p>
+      <div class="flourish">♡</div>
+    </section>
+
+    <section class="gallery section">
+      <div class="gallery-grid">
+        <div class="photo photo-large reveal">
+          <img src="assets/couple1.jpg" alt="The couple" onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=85'">
+        </div>
+        <div class="photo reveal">
+          <img src="assets/couple2.jpg" alt="Wedding moment" onerror="this.src='https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=85'">
+        </div>
+        <div class="quote-card reveal">
+          <span>“</span>
+          <p>Whatever our souls are made of, his and mine are the same.</p>
+          <small>— Emily Brontë</small>
+        </div>
+      </div>
+    </section>
+
+    <section id="details" class="details section">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Save the date</p>
+        <h2>The Wedding</h2>
+      </div>
+
+      <div class="details-grid">
+        <article class="detail-card reveal">
+          <div class="icon">♡</div>
+          <h3>Ceremony</h3>
+          <p>Saturday, October 3, 2026</p>
+          <p>07:00 PM</p>
+        </article>
+
+        <article class="detail-card reveal">
+          <div class="icon">⌖</div>
+          <h3>The Church</h3>
+          <p>Church of Archangel Michael</p>
+          <p>8 Khaled Ibn Al Walid, Sheraton Al Matar, El Nozha, Cairo</p>
+          <a class="text-link" target="_blank" rel="noopener"
+             href="https://maps.app.goo.gl/KAvxBD9WakeWut6d8">
+            Get Directions →
+          </a>
+        </article>
+
+        <article class="detail-card reveal">
+          <div class="icon">✦</div>
+          <h3>Reception</h3>
+          <p>After the Church</p>
+          <p>8:00 PM onwards</p>
+          <a class="text-link" target="_blank" rel="noopener"
+             href="https://maps.app.goo.gl/mB3NZo99qTrHpA3M9">
+            Get Directions →
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <section class="rsvp section reveal">
+      <div class="rsvp-inner">
+        <p class="eyebrow">A little something for you</p>
+        <h2>Receive Your Invitation</h2>
+        <p class="section-text">
+          Enter your email and we'll send your invitation card directly to your inbox.
+        </p>
+
+        <form id="rsvpForm" class="email-form">
+          <input id="email" type="email" placeholder="Your email address" autocomplete="email" required>
+          <button class="btn btn-dark" type="submit">
+            <span id="buttonText">Send Invitation ♡</span>
+            <span id="buttonSpinner" class="spinner hidden"></span>
+            
+          </button>
+        </form>
+
+        <p id="formMessage" class="form-message"></p>
+      </div>
+    </section>
+
+    <footer>
+      <div class="flourish">♡</div>
+      <h3>Abanoub &amp; Karen</h3>
+      <p>Made with love · 2026</p>
+    </footer>
+  </main>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>

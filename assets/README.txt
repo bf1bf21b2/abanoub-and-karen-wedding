@@ -1,0 +1,1 @@
+Put hero.jpg, couple1.jpg, couple2.jpg and invitation.pdf here.

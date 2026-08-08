@@ -1,0 +1,16 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /guests/{guestId} {
+      // Public invitation form can create a guest record.
+      allow create: if
+        request.resource.data.email is string &&
+        request.resource.data.email.size() > 4 &&
+        request.resource.data.email.size() < 200;
+
+      // Guests should not be able to read the guest list.
+      allow read, update, delete: if false;
+    }
+  }
+}
