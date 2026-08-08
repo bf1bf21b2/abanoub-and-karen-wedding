@@ -42,6 +42,7 @@ body {
 .hero {
   min-height: 140vh;
   position: relative;
+  
   display: grid;
   place-items: center;
   text-align: center;
@@ -50,8 +51,8 @@ body {
     linear-gradient(rgba(35,25,25,.32), rgba(35,25,25,.44)),
     url("assets/hero.jpg") center/cover,
     url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=90") center/cover;
-  background-size: cover; /* عشان الصورة تغطي الشاشة كلها بدون ما تتمط */
-  background-position: center; /* عشان يركز على منتصف الصورة دايماً */
+  background-size: cover;
+  background-position: center; 
   background-repeat: no-repeat;
 }
 
@@ -110,7 +111,7 @@ h2 { font: 500 clamp(44px, 6vw, 72px) var(--serif); line-height: .95; }
 .gallery { background: var(--cream); }
 .gallery-grid {
   max-width: 1100px; margin: auto;
-  display: grid; grid-template-columns: 1.35fr .85fr; gap: 18px;
+  display: grid; grid-template-columns: 1.35fr .99fr; gap: 18px;
 }
 .photo { overflow: hidden; min-height: 430px; }
 .photo-large { grid-row: span 2; min-height: 720px; }
