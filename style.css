@@ -744,45 +744,85 @@ footer p { opacity: .55; font-size: 9px; letter-spacing: .15em; margin-top: 10px
   }
 
   /* DETAILS — KEEP 3 COLUMNS LIKE LAPTOP */
-  .section-heading {
-    margin-bottom: 35px;
-  }
+ /* DETAILS — MOBILE */
+.section-heading {
+  margin-bottom: 35px;
+}
 
-  .details-grid {
-    grid-template-columns: repeat(3, 1fr);
-    width: 100%;
-    
-  }
+.details-grid {
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  justify-items: stretch;
+}
 
-  .detail-card {
-    padding: 30px 8px;
-    border-right: 1px solid var(--line);
-    border-bottom: 0;
-  }
+/* Vertical line exactly in the center */
+.details-grid::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: var(--line);
+  transform: translateX(-50%);
+}
 
-  .detail-card:last-child {
-    border-right: 0;
-  }
+.detail-card {
+  padding: 40px 10px;
+  border-right: 0;
+  border-bottom: 0;
+  text-align: center;
 
-  .icon {
-    font-size: 23px;
-    margin-bottom: 10px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
 
-  .detail-card h3 {
-    font-size: clamp(20px, 5vw, 30px);
-    margin-bottom: 10px;
-  }
+.detail-card:last-child {
+  border-right: 0;
+}
 
-  .detail-card p {
-    font-size: 8px;
-    line-height: 1.65;
-  }
+.icon {
+  font-size: 23px;
+  margin-bottom: 12px;
+}
 
-  .text-link {
-    font-size: 7px;
-    letter-spacing: .08em;
-  }
+.detail-card h3 {
+  font-size: clamp(22px, 6vw, 30px);
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.detail-card p {
+  font-size: 11px;
+  line-height: 1.7;
+  margin: 0;
+  text-align: center;
+}
+
+.text-link {
+  font-size: 8px;
+  letter-spacing: .08em;
+}
+
+/* Location image */
+.location-image-link {
+  display: block;
+  width: 90%;
+  max-width: 180px;
+  margin: 15px auto 0;
+}
+
+.location-image {
+  display: block;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 14px;
+}
 
   /* RSVP */
   .email-form {
