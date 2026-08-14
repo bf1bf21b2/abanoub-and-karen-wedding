@@ -123,7 +123,7 @@ h2 { font: 500 clamp(44px, 6vw, 72px) var(--serif); line-height: .95; }
   background: var(--paper); display: flex; flex-direction: column; justify-content: center;
   align-items: center; text-align: center; padding: 200px; margin-top: 60PX;
 }
-.quote-card1 {
+.quote-card1{
   background: var(--cream ); display: flex; flex-direction: column; justify-content: center;
   align-items: center; text-align: center; padding: 200px; margin-top: 60PX;
 }
