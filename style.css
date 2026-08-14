@@ -539,6 +539,41 @@ footer p { opacity: .55; font-size: 9px; letter-spacing: .15em; margin-top: 10px
 
 }
 
+.location-image-link {
+  display: block;
+  width: 100%;
+  margin-top: 18px;
+  border-radius: 14px;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.location-image {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.location-image-link:hover .location-image {
+  transform: scale(1.03);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .location-image-link {
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 12px;
+  }
+
+  .location-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+}
 
 /* =========================
    MUSIC BUTTON
@@ -716,6 +751,7 @@ footer p { opacity: .55; font-size: 9px; letter-spacing: .15em; margin-top: 10px
   .details-grid {
     grid-template-columns: repeat(3, 1fr);
     width: 100%;
+    
   }
 
   .detail-card {
