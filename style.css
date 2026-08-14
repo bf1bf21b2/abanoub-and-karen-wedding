@@ -21,6 +21,7 @@ body {
   overflow-x: hidden;
 }
 
+
 .loader {
   position: fixed;
   inset: 0;
