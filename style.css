@@ -123,6 +123,10 @@ h2 { font: 500 clamp(44px, 6vw, 72px) var(--serif); line-height: .95; }
   background: var(--paper); display: flex; flex-direction: column; justify-content: center;
   align-items: center; text-align: center; padding: 200px; margin-top: 60PX;
 }
+.quote-card1 {
+  background: var(--cream ); display: flex; flex-direction: column; justify-content: center;
+  align-items: center; text-align: center; padding: 200px; margin-top: 60PX;
+}
 .quote-card span { font: 70px var(--serif); color: var(--paper); line-height: .5; }
 .quote-card p { font: italic 27px/1.25 var(--serif); margin: 20px 0; }
 .quote-card small { color: var(--muted); font-size: 10px; letter-spacing: .12em; }
