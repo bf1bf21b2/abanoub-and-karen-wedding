@@ -128,7 +128,7 @@ h2 { font: 500 clamp(44px, 6vw, 72px) var(--serif); line-height: .95; }
 .details { text-align: center; }
 .section-heading { margin-bottom: 55px; }
 .details-grid {
-  max-width: 1000px; margin: auto; display: grid; grid-template-columns: repeat(3,1fr);
+  max-width: 1000px; margin: auto; display: grid; grid-template-columns: repeat(2,1fr);
   border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
 }
 .detail-card { padding: 48px 25px; border-right: 1px solid var(--line); }
