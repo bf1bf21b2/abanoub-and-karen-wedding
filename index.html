@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
+
   <div id="loader" class="loader">
     <div class="loader-ring"></div>
     <p>With love...</p>
@@ -111,7 +111,7 @@
     <section class="gallery section">
       <div class="gallery-grid">
         <div class="photo photo-large reveal">
-          <img src="assets/couple11.jpg" >
+          <img src="assets/couple1.jpg" >
         </div>
        
         <div class="quote-card reveal">
@@ -159,7 +159,7 @@
     aria-label="Open church location in Google Maps"
   >
     <img
-      src="assets/church-location.jpg"
+      src="images/church-location.jpg"
       alt="Church location"
       class="location-image"
     >
@@ -179,7 +179,7 @@
     aria-label="Open church location in Google Maps"
   >
     <img
-      src="assets/Opera Hall.jpg"
+      src="images/Opera Hall.jpg"
       alt="Church location"
       class="location-image"
     >
@@ -208,6 +208,138 @@
         <p id="formMessage" class="form-message"></p>
       </div>
     </section>
+
+
+<!-- Confirm Attendance -->
+<section class="attendance section reveal">
+
+  <div class="attendance-inner">
+
+    <p class="eyebrow">We would love to celebrate with you</p>
+
+    <h2>Confirm Your Attendance</h2>
+
+    <p class="section-text">
+      Please let us know if you will be joining us on our special day.
+    </p>
+
+    <form id="attendanceForm" class="attendance-form">
+
+      <!-- Name -->
+      <div class="form-group">
+        <label for="guestName">Your Name</label>
+
+        <input
+          id="guestName"
+          name="name"
+          type="text"
+          placeholder="Enter your full name"
+          autocomplete="name"
+          required
+        >
+      </div>
+
+
+      <!-- Attendance -->
+      <div class="form-group">
+
+        <label>Will you attend?</label>
+
+        <div class="attendance-options">
+
+          <label class="attendance-option">
+            <input
+              type="radio"
+              name="attendance"
+              value="Yes"
+              required
+            >
+            <span>Yes, I'll be there ♡</span>
+          </label>
+
+          <label class="attendance-option">
+            <input
+              type="radio"
+              name="attendance"
+              value="No"
+            >
+            <span>Sorry, I can't make it</span>
+          </label>
+
+        </div>
+
+      </div>
+
+
+      <!-- Number of guests -->
+      <div
+        class="form-group guests-group"
+        id="guestsGroup"
+      >
+
+        <label for="guestCount">
+          Number of guests
+        </label>
+
+        <div class="guest-counter">
+
+          <button
+            type="button"
+            id="minusGuest"
+            class="counter-btn"
+          >
+            −
+          </button>
+
+          <input
+            id="guestCount"
+            name="guests"
+            type="number"
+            value="1"
+            min="1"
+            max="10"
+            readonly
+          >
+
+          <button
+            type="button"
+            id="plusGuest"
+            class="counter-btn"
+          >
+            +
+          </button>
+
+        </div>
+
+        <small>
+          Including yourself
+        </small>
+
+      </div>
+
+
+      <button
+        type="submit"
+        class="btn btn-dark attendance-submit"
+        id="attendanceSubmit"
+      >
+        Confirm Attendance ♡
+      </button>
+
+    </form>
+
+    <p
+      id="attendanceMessage"
+      class="form-message"
+    ></p>
+
+  </div>
+
+</section>
+
+
+
+
 
     <footer>
       <div class="flourish">♡</div>
