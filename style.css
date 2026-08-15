@@ -904,33 +904,113 @@ footer p { opacity: .55; font-size: 9px; letter-spacing: .15em; margin-top: 10px
     overflow-x: hidden;
   }
 
-  /* HERO */
-  .hero {
-    min-height: 100svh;
-    height: 100svh;
-    background-position: center center;
-  }
+  /* =========================
+   HERO — MOBILE
+========================= */
 
-  .hero-content {
-    width: 100%;
-    padding: 20px;
-  }
+.hero {
+  min-height: 100svh;
+  height: 100svh;
+  position: relative;
+  overflow: hidden;
 
-  .hero h1 {
-    font-size: clamp(48px, 13vw, 90px);
-    white-space: nowrap;
-  }
+  display: grid;
+  place-items: center;
+}
 
-  .eyebrow {
-    font-size: 8px;
-    letter-spacing: .22em;
-  }
+/* VIDEO BACKGROUND */
+.hero-video {
+  position: absolute;
+  inset: 0;
 
-  .hero-subtitle {
-    font-size: 9px;
-    letter-spacing: .12em;
-    margin: 20px 0;
-  }
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center center;
+
+  z-index: 0;
+}
+
+/* OVERLAY */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at center,
+      transparent 15%,
+      rgba(0, 0, 0, .25)
+    );
+
+  z-index: 1;
+}
+
+/* HERO CONTENT */
+.hero-content {
+  position: relative;
+  z-index: 3;
+
+  width: 100%;
+  padding: 20px;
+
+  text-align: center;
+
+  /* مهم لو عندك reveal animation */
+  opacity: 1;
+  visibility: visible;
+}
+
+/* EYEBROW */
+.eyebrow {
+  font-size: 8px;
+  letter-spacing: .22em;
+  margin-bottom: 15px;
+}
+
+/* NAMES */
+.hero h1 {
+  font-size: clamp(48px, 13vw, 90px);
+  white-space: nowrap;
+  line-height: .9;
+}
+
+/* SUBTITLE */
+.hero-subtitle {
+  font-size: 9px;
+  letter-spacing: .12em;
+  margin: 20px 0;
+}
+
+/* DATE */
+.date-line {
+  position: relative;
+  z-index: 3;
+}
+
+/* BUTTON */
+.hero .btn {
+  position: relative;
+  z-index: 3;
+}
+
+/* SCROLL */
+.scroll-hint {
+  position: absolute;
+
+  bottom: 28px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  z-index: 3;
+
+  font-size: 10px;
+  letter-spacing: .3em;
+
+  white-space: nowrap;
+}
 
   .date-line {
     font-size: 19px;
