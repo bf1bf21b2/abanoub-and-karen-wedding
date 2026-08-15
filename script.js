@@ -183,3 +183,174 @@ musicBtn.addEventListener("click", async () => {
     }
 
 });
+
+
+/* =========================================
+   WEDDING ATTENDANCE / RSVP
+========================================= */
+
+const attendanceForm = document.getElementById("attendanceForm");
+const guestCountInput = document.getElementById("guestCount");
+const minusGuest = document.getElementById("minusGuest");
+const plusGuest = document.getElementById("plusGuest");
+const guestsGroup = document.getElementById("guestsGroup");
+const attendanceMessage = document.getElementById("attendanceMessage");
+const attendanceSubmit = document.getElementById("attendanceSubmit");
+
+
+// Change guest count
+minusGuest.addEventListener("click", () => {
+
+  let current = parseInt(guestCountInput.value);
+
+  if (current > 1) {
+    current--;
+    guestCountInput.value = current;
+  }
+
+});
+
+
+plusGuest.addEventListener("click", () => {
+
+  let current = parseInt(guestCountInput.value);
+
+  if (current < 30) {
+    current++;
+    guestCountInput.value = current;
+  }
+
+});
+
+
+// Show / hide guest counter
+const attendanceInputs = document.querySelectorAll(
+  'input[name="attendance"]'
+);
+
+attendanceInputs.forEach(input => {
+
+  input.addEventListener("change", () => {
+
+    if (input.value === "No" && input.checked) {
+
+      guestsGroup.classList.add("hidden");
+      guestCountInput.value = 0;
+
+    }
+
+    if (input.value === "Yes" && input.checked) {
+
+      guestsGroup.classList.remove("hidden");
+
+      if (parseInt(guestCountInput.value) < 1) {
+        guestCountInput.value = 1;
+      }
+
+    }
+
+  });
+
+});
+
+
+// Submit attendance
+attendanceForm.addEventListener("submit", async (e) => {
+
+  e.preventDefault();
+
+  const name =
+    document.getElementById("guestName").value.trim();
+
+  const attendance =
+    document.querySelector(
+      'input[name="attendance"]:checked'
+    );
+
+  if (!name) {
+    attendanceMessage.textContent =
+      "Please enter your name.";
+
+    attendanceMessage.className =
+      "form-message error";
+
+    return;
+  }
+
+  if (!attendance) {
+    attendanceMessage.textContent =
+      "Please select your attendance.";
+
+    attendanceMessage.className =
+      "form-message error";
+
+    return;
+  }
+
+  let guests =
+    parseInt(guestCountInput.value);
+
+  if (attendance.value === "No") {
+    guests = 0;
+  }
+
+  attendanceSubmit.disabled = true;
+
+  attendanceSubmit.textContent =
+    "Sending...";
+
+  attendanceMessage.textContent = "";
+
+  try {
+
+    // Make sure Firebase is connected
+    if (!db) {
+      throw new Error("Firebase is not configured.");
+    }
+
+    // Save attendance directly to Firestore
+    await addDoc(
+      collection(db, "attendance"),
+      {
+        name: name,
+        attendance: attendance.value,
+        guests: guests,
+        createdAt: serverTimestamp()
+      }
+    );
+
+    // Success
+    attendanceMessage.textContent =
+      "Thank you! Your attendance has been confirmed ♡";
+
+    attendanceMessage.className =
+      "form-message success";
+
+    attendanceForm.reset();
+
+    guestCountInput.value = 1;
+
+    guestsGroup.classList.remove("hidden");
+
+    attendanceSubmit.disabled = false;
+
+    attendanceSubmit.textContent =
+      "Confirmed ♡";
+
+  } catch (error) {
+
+    console.error("Attendance error:", error);
+
+    attendanceMessage.textContent =
+      "Something went wrong. Please try again.";
+
+    attendanceMessage.className =
+      "form-message error";
+
+    attendanceSubmit.disabled = false;
+
+    attendanceSubmit.textContent =
+      "Confirm Attendance ♡";
+  }
+
+});
