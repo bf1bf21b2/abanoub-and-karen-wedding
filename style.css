@@ -5,6 +5,7 @@
   --rose-dark: #8e6262;
   --ink: #3d3535;
   --muted: #807575;
+  --color: #1e2fc9;
   --line: rgba(80, 60, 60, .14);
   --serif: "Cormorant Garamond", Georgia, serif;
   --sans: "Montserrat", Arial, sans-serif;
@@ -20,7 +21,6 @@ body {
   font-family: var(--sans);
   overflow-x: hidden;
 }
-
 
 .loader {
   position: fixed;
@@ -124,16 +124,18 @@ h2 { font: 500 clamp(44px, 6vw, 72px) var(--serif); line-height: .95; }
   background: var(--paper); display: flex; flex-direction: column; justify-content: center;
   align-items: center; text-align: center; padding: 200px; margin-top: 60PX;
 }
-.quote-card1{
+
+.quote-card1 {
   background: var(--cream ); display: flex; flex-direction: column; justify-content: center;
   align-items: center; text-align: center; padding: 200px; margin-top: 60PX;
 }
-.quote-card1 span { font: 70px var(--serif); color: var(--paper); line-height: .5; }
-.quote-card1 p { font: italic 27px/1.25 var(--serif); margin: 20px 0; }
-.quote-card1 small { color: var(--muted); font-size: 10px; letter-spacing: .12em; }
 .quote-card span { font: 70px var(--serif); color: var(--paper); line-height: .5; }
 .quote-card p { font: italic 27px/1.25 var(--serif); margin: 20px 0; }
 .quote-card small { color: var(--muted); font-size: 10px; letter-spacing: .12em; }
+
+.quote-card1 span { font: 70px var(--serif); color: var(--paper); line-height: .5; }
+.quote-card1 p { font: italic 27px/1.25 var(--serif); margin: 20px 0; }
+.quote-card1 small { color: var(--muted); font-size: 10px; letter-spacing: .12em; }
 
 .details { text-align: center;  background: var(--cream);}
 .section-heading { margin-bottom: 55px; }
@@ -635,6 +637,202 @@ footer p { opacity: .55; font-size: 9px; letter-spacing: .15em; margin-top: 10px
     transform: scale(1.08);
 }
 
+/* =========================================
+   ATTENDANCE / RSVP
+========================================= */
+
+.attendance {
+  padding: 100px 20px;
+  background: var(--cream, #f8f5f0);
+  text-align: center;
+}
+
+.attendance-inner {
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.attendance-inner h2 {
+  margin-bottom: 15px;
+}
+
+.attendance-form {
+  width: 100%;
+  max-width: 500px;
+  margin: 45px auto 0;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"] {
+  width: 100%;
+  padding: 16px 18px;
+  border: 1px solid var(--line, #ddd6cc);
+  background: transparent;
+  font-family: inherit;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-group input[type="text"]:focus {
+  border-color: #777;
+}
+
+
+/* Attendance choices */
+
+.attendance-options {
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+}
+
+.attendance-option {
+  position: relative;
+  display: flex !important;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 18px;
+  border: 1px solid var(--line, #ddd6cc);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  font-size: 14px !important;
+}
+
+.attendance-option:hover {
+  border-color: #888;
+}
+
+.attendance-option input {
+  accent-color: #333;
+}
+
+.attendance-option span {
+  flex: 1;
+}
+
+
+/* Guest counter */
+
+.guest-counter {
+  display: flex;
+  align-items: center;
+  width: 170px;
+  border: 1px solid var(--line, #ddd6cc);
+}
+
+.counter-btn {
+  width: 50px;
+  height: 50px;
+  border: none;
+  background: transparent;
+  font-size: 22px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.counter-btn:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+#guestCount {
+  width: 70px;
+  height: 50px;
+  padding: 0;
+  text-align: center;
+  border: none;
+  background: transparent;
+}
+
+.form-group small {
+  display: block;
+  margin-top: 8px;
+  font-size: 11px;
+  opacity: 0.6;
+}
+
+
+/* Submit */
+
+.attendance-submit {
+  width: 100%;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.attendance-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+/* Success / Error */
+
+#attendanceMessage {
+  margin-top: 25px;
+  min-height: 20px;
+}
+
+#attendanceMessage.success {
+  color: #49634d;
+}
+
+#attendanceMessage.error {
+  color: #9b4b4b;
+}
+
+
+/* Hidden guests section */
+
+.guests-group.hidden {
+  display: none;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+  .attendance {
+    padding: 75px 20px;
+  }
+
+  .attendance-inner h2 {
+    font-size: 34px;
+  }
+
+  .attendance-form {
+    margin-top: 35px;
+  }
+
+  .attendance-option {
+    padding: 14px;
+  }
+
+  .guest-counter {
+    width: 160px;
+  }
+
+}
+
 
 /* =========================
    MOBILE
@@ -750,23 +948,6 @@ footer p { opacity: .55; font-size: 9px; letter-spacing: .15em; margin-top: 10px
   }
 
   .quote-card small {
-    font-size: 8px;
-  }
-
-  .quote-card1 {
-    padding: 20px 10px;
-  }
-
-  .quote-card1 span {
-    font-size: 45px;
-  }
-
-  .quote-card1 p {
-    font-size: clamp(16px, 4.2vw, 27px);
-    margin: 12px 0;
-  }
-
-  .quote-card1 small {
     font-size: 8px;
   }
 
@@ -970,4 +1151,182 @@ footer p { opacity: .55; font-size: 9px; letter-spacing: .15em; margin-top: 10px
   .text-link {
     font-size: 6px;
   }
+}
+/* =========================================
+   CONFIRM ATTENDANCE - MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .attendance {
+    width: 100%;
+    padding: 70px 16px;
+    box-sizing: border-box;
+  }
+
+  .attendance-inner {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .attendance-inner .eyebrow {
+    font-size: 10px;
+    letter-spacing: 2px;
+    line-height: 1.6;
+  }
+
+  .attendance-inner h2 {
+    font-size: 34px;
+    line-height: 1.1;
+    margin: 12px 0 18px;
+  }
+
+  .attendance-inner .section-text {
+    font-size: 13px;
+    line-height: 1.8;
+    max-width: 330px;
+    margin: 0 auto;
+  }
+
+  .attendance-form {
+    width: 100%;
+    max-width: 100%;
+    margin: 35px auto 0;
+    box-sizing: border-box;
+  }
+
+  .form-group {
+    width: 100%;
+    margin-bottom: 22px;
+  }
+
+  .form-group > label {
+    font-size: 11px !important;
+    letter-spacing: 1.2px !important;
+    margin-bottom: 9px;
+  }
+
+  /* Name input */
+
+  .form-group input[type="text"] {
+    width: 100%;
+    height: 52px;
+    padding: 0 15px;
+    font-size: 14px;
+    box-sizing: border-box;
+    border-radius: 0;
+  }
+
+  /* Yes / No */
+
+  .attendance-options {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .attendance-option {
+    width: 100%;
+    min-height: 52px;
+    padding: 13px 14px !important;
+    box-sizing: border-box;
+    display: flex !important;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .attendance-option input {
+    flex: 0 0 auto;
+    width: 16px;
+    height: 16px;
+    margin: 0;
+  }
+
+  .attendance-option span {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  /* Guests */
+
+  .guests-group {
+    width: 100%;
+  }
+
+  .guest-counter {
+    width: 160px;
+    height: 50px;
+    margin: 0 auto;
+  }
+
+  .counter-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 21px;
+  }
+
+  #guestCount {
+    width: 60px;
+    height: 50px;
+    font-size: 16px;
+  }
+
+  .form-group small {
+    text-align: center;
+    margin-top: 8px;
+    font-size: 10px;
+  }
+
+  /* Confirm button */
+
+  .attendance-submit {
+    width: 100%;
+    min-height: 54px;
+    margin-top: 5px;
+    padding: 14px 18px;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  /* Message */
+
+  #attendanceMessage {
+    width: 100%;
+    padding: 0 5px;
+    margin-top: 20px;
+    font-size: 12px;
+    line-height: 1.6;
+    box-sizing: border-box;
+  }
+
+}
+@media (max-width: 380px) {
+
+  .attendance {
+    padding: 60px 14px;
+  }
+
+  .attendance-inner h2 {
+    font-size: 30px;
+  }
+
+  .attendance-inner .section-text {
+    font-size: 12px;
+  }
+
+  .attendance-option {
+    padding: 12px !important;
+  }
+
+  .attendance-option span {
+    font-size: 12px;
+  }
+
+  .attendance-submit {
+    min-height: 52px;
+  }
+
 }
