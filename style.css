@@ -950,6 +950,22 @@ footer p { opacity: .55; font-size: 9px; letter-spacing: .15em; margin-top: 10px
   .quote-card small {
     font-size: 8px;
   }
+  .quote-card1 {
+    padding: 20px 10px;
+  }
+
+  .quote-card1 span {
+    font-size: 45px;
+  }
+
+  .quote-card1 p {
+    font-size: clamp(16px, 4.2vw, 27px);
+    margin: 12px 0;
+  }
+
+  .quote-card1 small {
+    font-size: 8px;
+  }
 
   /* DETAILS — KEEP 3 COLUMNS LIKE LAPTOP */
  /* DETAILS — MOBILE */
