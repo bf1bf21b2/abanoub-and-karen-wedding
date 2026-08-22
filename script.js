@@ -47,6 +47,30 @@ const emailInput = document.getElementById("email");
 const message = document.getElementById("formMessage");
 const buttonText = document.getElementById("buttonText");
 const spinner = document.getElementById("buttonSpinner");
+document.addEventListener("DOMContentLoaded", () => {
+  const video = document.querySelector(".hero-video");
+
+  if (!video) return;
+
+  video.muted = true;
+  video.setAttribute("muted", "");
+  video.setAttribute("playsinline", "");
+  video.setAttribute("webkit-playsinline", "");
+
+  const playVideo = () => {
+    const promise = video.play();
+
+    if (promise !== undefined) {
+      promise.catch(() => {
+      });
+    }
+  };
+
+  video.addEventListener("canplay", playVideo, { once: true });
+
+  setTimeout(playVideo, 1000);
+});
+
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
