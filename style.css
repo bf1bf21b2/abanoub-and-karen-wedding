@@ -91,7 +91,7 @@ body {
 .eyebrow {
   text-transform: uppercase;
   letter-spacing: .32em;
-  font-size: 10px;
+  font-size: 15px;
   font-weight: 500;
   margin-bottom: 18px;
 }
@@ -182,7 +182,7 @@ h2 { font: 12 clamp(44px, 1vw, 72px) var(--sans); line-height: .95; }
 .detail-card:last-child { border-right: 0; }
 .icon { color: var(--rose); font: 28px var(--serif); margin-bottom: 15px; }
 .detail-card h3 { font: 500 30px var(--serif); margin-bottom: 14px; }
-.detail-card p { color: var(--muted); font-size: 11px; line-height: 1.8; }
+.detail-card p { color: var(--muted); font-size: 18px; line-height: 1.8; }
 .text-link { display: inline-block; margin-top: 17px; color: var(--rose-dark); text-decoration: none; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
 .text-link:hover { text-decoration: underline; }
 
@@ -965,7 +965,7 @@ footer p { opacity: .55; font-size: 9px; letter-spacing: .15em; margin-top: 10px
 
 /* EYEBROW */
 .eyebrow {
-  font-size: 8px;
+  font-size: 15px;
   letter-spacing: .22em;
   margin-bottom: 15px;
 }
