@@ -140,7 +140,7 @@ body {
 
 .section { padding: 110px 7vw; }
 .intro { text-align: center; max-width: 850px; margin: auto; }
-h2 { font: 500 clamp(44px, 6vw, 72px) var(--serif); line-height: .95; }
+h2 { font: 12 clamp(44px, 1vw, 72px) var(--sans); line-height: .95; }
 .section-text { max-width: 620px; margin: 25px auto 0; color: var(--muted); line-height: 1.9; font-size: 13px; }
 .flourish { color: var(--rose); font: 35px var(--serif); margin-top: 28px; }
 
