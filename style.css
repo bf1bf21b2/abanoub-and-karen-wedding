@@ -125,7 +125,8 @@ body {
   display: inline-flex; justify-content: center; align-items: center;
   min-width: 190px; padding: 15px 25px; border: 1px solid transparent;
   text-decoration: none; text-transform: uppercase; letter-spacing: .17em;
-  font: 500 10px var(--sans); cursor: pointer; transition: .3s ease;
+  font: 500 10px var(--sans); cursor: pointer; transition: .3s ease;  margin: 0 auto;
+
 }
 .btn-light { color: white; border-color: rgba(255,255,255,.7); background: rgba(255,255,255,.06); }
 .btn-light:hover { background: white; color: var(--ink); }
@@ -1021,6 +1022,8 @@ footer p { opacity: .55; font-size: 9px; letter-spacing: .15em; margin-top: 10px
   .btn {
     min-width: 170px;
     padding: 13px 18px;
+    margin: 0 auto;
+
   }
 
   /* SECTION — same general proportions as laptop */
