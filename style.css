@@ -893,18 +893,19 @@ footer p { opacity: .55; font-size: 9px; letter-spacing: .15em; margin-top: 10px
 @media (max-width: 600px) {
 
     .envelope {
-        width: 90vw;
-        height: 58vw;
+        width: clamp(280px, 90vw, 500px);
+        height: auto;
+        aspect-ratio: 1.55 / 1;
     }
 
     .wax-seal {
-        width: 65px;
-        height: 65px;
-        font-size: 15px;
+        width: clamp(55px, 16vw, 75px);
+        height: clamp(55px, 16vw, 75px);
+        font-size: clamp(13px, 3.5vw, 17px);
     }
 
     .open-text {
-        font-size: 12px;
+        font-size: clamp(10px, 3.2vw, 14px);
     }
 
 }
