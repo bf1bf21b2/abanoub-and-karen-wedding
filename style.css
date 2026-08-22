@@ -91,7 +91,7 @@ body {
 .eyebrow {
   text-transform: uppercase;
   letter-spacing: .32em;
-  font-size: 15px;
+  font-size: 11px;
   font-weight: 500;
   margin-bottom: 18px;
 }
@@ -965,7 +965,7 @@ footer p { opacity: .55; font-size: 9px; letter-spacing: .15em; margin-top: 10px
 
 /* EYEBROW */
 .eyebrow {
-  font-size: 13px;
+  font-size: 10px;
   letter-spacing: .22em;
   margin-bottom: 15px;
 }
