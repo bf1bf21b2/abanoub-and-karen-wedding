@@ -80,7 +80,9 @@ body {
 
   z-index: 1;
 }
-
+.empty-line {
+  height: 1.5em;
+}
 /* CONTENT ABOVE VIDEO */
 .hero-content {
   position: relative;
