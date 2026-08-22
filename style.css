@@ -965,7 +965,7 @@ footer p { opacity: .55; font-size: 9px; letter-spacing: .15em; margin-top: 10px
 
 /* EYEBROW */
 .eyebrow {
-  font-size: 15px;
+  font-size: 20px;
   letter-spacing: .22em;
   margin-bottom: 15px;
 }
@@ -1138,7 +1138,7 @@ footer p { opacity: .55; font-size: 9px; letter-spacing: .15em; margin-top: 10px
 }
 
 .detail-card p {
-  font-size: 11px;
+  font-size: 18px;
   line-height: 1.7;
   margin: 0;
   text-align: center;
@@ -1278,7 +1278,7 @@ footer p { opacity: .55; font-size: 9px; letter-spacing: .15em; margin-top: 10px
   }
 
   .detail-card p {
-    font-size: 7px;
+    font-size: 15px;
   }
 
   .text-link {
