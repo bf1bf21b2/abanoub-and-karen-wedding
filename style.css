@@ -1200,62 +1200,113 @@ footer p { opacity: .55; font-size: 9px; letter-spacing: .15em; margin-top: 10px
     font-size: 30px;
   }
 
-  /* INVITATION OPENING — do not break it */
-  .invitation-screen {
-    padding: 12px;
+ .invitation-screen {
+    padding: 10px;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
   }
 
   .invitation-wrapper {
     width: 100%;
+    max-width: 560px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .envelope {
-    width: min(90vw, 560px);
-    height: min(58vw, 350px);
+    width: min(88vw, 360px);
+    height: auto;
+    aspect-ratio: 1.55 / 1;
+    margin: 0 auto;
   }
 
   .small-title {
-    font-size: 9px;
-    letter-spacing: 2.5px;
+    font-size: clamp(8px, 2.5vw, 11px);
+    letter-spacing: clamp(1.5px, 0.7vw, 2.5px);
   }
 
   .card-content h1 {
-    font-size: clamp(31px, 8vw, 60px);
+    font-size: clamp(28px, 8.5vw, 42px);
+    line-height: 1;
   }
 
   .and {
-    font-size: 22px;
+    font-size: clamp(18px, 5vw, 24px);
   }
 
   .card-content p {
-    font-size: 10px;
-    letter-spacing: 1px;
+    font-size: clamp(9px, 2.8vw, 12px);
+    letter-spacing: clamp(.5px, .3vw, 1.2px);
   }
 
   .card-date {
-    font-size: 10px;
-    letter-spacing: 2px;
+    font-size: clamp(9px, 2.8vw, 12px);
+    letter-spacing: clamp(1px, .6vw, 2px);
   }
 
   .wax-seal {
-    width: 62px;
-    height: 62px;
-    font-size: 14px;
+    width: clamp(52px, 16vw, 65px);
+    height: clamp(52px, 16vw, 65px);
+    font-size: clamp(12px, 3.5vw, 15px);
   }
 
   .open-text {
-    margin-top: 20px;
-    font-size: 11px;
+    margin-top: clamp(12px, 4vw, 20px);
+    font-size: clamp(10px, 3vw, 12px);
+    line-height: 1.3;
   }
 
   .music-btn {
-    right: 14px;
-    bottom: 14px;
-    width: 48px;
-    height: 48px;
+    right: max(10px, env(safe-area-inset-right));
+    bottom: max(10px, env(safe-area-inset-bottom));
+    width: 46px;
+    height: 46px;
   }
+
 }
 
+
+/* iPhone SE / very small screens */
+@media (max-width: 375px) {
+
+  .invitation-screen {
+    padding: 8px;
+  }
+
+  .envelope {
+    width: 86vw;
+    max-width: 330px;
+  }
+
+  .card-content h1 {
+    font-size: clamp(26px, 8.2vw, 34px);
+  }
+
+  .and {
+    font-size: 19px;
+  }
+
+  .wax-seal {
+    width: 54px;
+    height: 54px;
+    font-size: 12px;
+  }
+
+  .open-text {
+    margin-top: 12px;
+    font-size: 10px;
+  }
+
+  .music-btn {
+    width: 44px;
+    height: 44px;
+  }
+
+}
 @media (max-width: 390px) {
 
   .hero h1 {
