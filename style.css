@@ -915,7 +915,7 @@ footer p { opacity: .55; font-size: 9px; letter-spacing: .15em; margin-top: 10px
    Only reduce sizes; do NOT stack the main layout.
 ========================================================= */
 
-@media (max-width: 760px) {
+@media (max-width: 600px) {
 
   html, body {
     width: 100%;
