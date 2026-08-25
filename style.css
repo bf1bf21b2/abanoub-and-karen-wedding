@@ -240,6 +240,8 @@ footer p { opacity: .55; font-size: 9px; letter-spacing: .15em; margin-top: 10px
     display: flex;
     align-items: center;
     justify-content: center;
+     overflow: hidden;
+
 
     background:
         radial-gradient(circle at center,
@@ -249,7 +251,7 @@ footer p { opacity: .55; font-size: 9px; letter-spacing: .15em; margin-top: 10px
 
     transition:
         opacity 1.2s ease,
-        visibility 1.2s ease;
+        visibility 3s ease;
 }
 
 .invitation-screen.hidden {
@@ -1917,53 +1919,110 @@ footer p { opacity: .55; font-size: 9px; letter-spacing: .15em; margin-top: 10px
 
 @media (max-width: 600px) {
 
+    .invitation-screen {
+        width: 100%;
+        min-height: 100svh;
+        overflow: hidden;
+    }
+
+    .invitation-wrapper {
+        width: 88%;
+        max-width: 420px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    /* Floral Frame */
     .floral-frame {
-        inset: -28px;
+        position: absolute;
+        inset: -12px;
+        width: auto;
+        height: auto;
+        pointer-events: none;
+        z-index: 0;
     }
 
+    /* Outer frame */
     .floral-frame::before {
-        inset: 18px;
-        border-radius: 14px;
+        content: "";
+        position: absolute;
+        inset: 0;
+        border: 1px solid rgba(183, 131, 131, 0.38);
+        border-radius: 16px;
     }
 
+    /* Inner frame */
     .floral-frame::after {
-        inset: 24px;
-        border-radius: 11px;
+        content: "";
+        position: absolute;
+        inset: 7px;
+        border: 1px solid rgba(183, 131, 131, 0.16);
+        border-radius: 12px;
     }
 
+    /* Flowers */
     .flower {
-        font-size: 32px;
+        position: absolute;
+        z-index: 3;
+        font-size: 30px;
+        line-height: 1;
     }
 
+    /* Top Left */
     .flower-tl {
-        top: -8px;
-        left: -10px;
+        top: -9px;
+        left: -9px;
+        transform: rotate(-25deg);
     }
 
+    /* Top Right */
     .flower-tr {
-        top: -8px;
-        right: -10px;
+        top: -9px;
+        right: -9px;
+        transform: scaleX(-1) rotate(-25deg);
     }
 
+    /* Bottom Left */
     .flower-bl {
-        bottom: -8px;
-        left: -10px;
+        bottom: -9px;
+        left: -9px;
+        transform: scaleY(-1) rotate(-25deg);
     }
 
+    /* Bottom Right */
     .flower-br {
-        bottom: -8px;
-        right: -10px;
+        bottom: -9px;
+        right: -9px;
+        transform: scale(-1) rotate(-25deg);
     }
 
+    /* Envelope */
+    .envelope {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+    }
+
+    /* Decorative text */
     .invitation-wrapper::before {
-        top: -48px;
-        font-size: 15px;
-        letter-spacing: 8px;
+        content: "✿  ·  ❀";
+        top: -32px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 13px;
+        letter-spacing: 6px;
+        color: #b78383;
+        white-space: nowrap;
     }
 
     .invitation-wrapper::after {
-        bottom: 20px;
-        font-size: 13px;
-        letter-spacing: 7px;
+        content: "❀  ·  ✿";
+        bottom: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 12px;
+        letter-spacing: 6px;
+        color: #b78383;
+        white-space: nowrap;
     }
 }
