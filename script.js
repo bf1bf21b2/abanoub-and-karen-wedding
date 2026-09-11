@@ -378,3 +378,25 @@ attendanceForm.addEventListener("submit", async (e) => {
   }
 
 });
+
+const rsvpForm = document.getElementById("rsvpForm");
+
+if (rsvpForm) {
+  rsvpForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Create download link
+    const downloadLink = document.createElement("a");
+
+    // Path to your invitation file
+    downloadLink.href = "assets/invitation.pdf";
+
+    // File name after downloading
+    downloadLink.download = "Abanoub-and-Karen-Invitation.pdf";
+
+    // Trigger download
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
+  });
+}
